@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100&display=swap');
+*,
+*::before,
+*::after{
+    margin: 0;/*by default browser is taking 8px margin if ur not using bootstrap so to remove that*/ 
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    /* By default browser font ko 16px manta h that is 100% */
+    /* 1rem=10px and is better practise to write rem rather than px */
+    font-family: 'Jost', sans-serif;
+}
+.main_container{
+    width :100vw;
+    height:100vh;
+    display: grid;
+    place-items: center;
+   
+   }
+.music_container{
+width:35rem;
+height:55rem;
+/* 25 n 75 percent of the parent container */
+border-radius: 4%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+padding:3rem;
+text-align: center;
+}
+.heading
+{
+ 
+   font-size:3.5rem;
+   word-spacing: 0.5rem;
+    letter-spacing: 0.2rem;
+    margin:2rem 0 0.5rem 0;
+    font-weight: 800;
+    color:black;
+    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.3);
+}
+.singer_name{
+   
+    font-size: 2.0rem;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+    
+}
+.image{
+    width:25rem;
+    height: 25rem;
+    margin: auto;
+}
+.song_cover{
+    width:100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: -6%;
+    object-fit: cover;
+
+}
+.music_controls
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:15rem;
+    font-size: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+.music_controls .fas
+{
+    color:#111111;
+    font-size: 2rem;
+    cursor: pointer;
+    filter: drop-shadow( 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19));
+}
+.music_controls .main_button{
+    width:5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #111111;
+    color:#f6f6f6;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.music_controls .fas:hover{
+    color:grey;
+}
+.music_controls .fa-play:hover{
+    color: black #111;
+    background-color: #f6f6f6;
+    filter: drop-shadow( 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19));
+}
+.anime{
+    animation: rotatePlayer 10s linear infinite;
+}
+@keyframes rotatePlayer
+{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
