@@ -9,8 +9,8 @@
     <body>
         <div class="main_container">
             <div class="music_container">
-               <h1 class="heading">Waalian</h1>
-               <h5 class="singer_name">- By Harnoor</h5>
+               <h1 class="heading" id="title">Waalian</h1>
+               <h5 class="singer_name" id="artist">- By Harnoor</h5>
                <div class="image">
                 <img src="Waalian.jpg" alt="Waalian"  class="song_cover">
                 </div>
@@ -28,8 +28,31 @@
             const music=document.querySelector("audio");
             const play=document.getElementById("play");
             const img=document.querySelector("img");
+            const title=document.getElementById("title");
+            const artist=document.getElementById("artist");
+            const prev=document.getElementById("backward");
+            const next=document.getElementById("forward");
+
             let isPlaying=false;
 
+            const songs=[
+                {
+                    name:"Waalian",
+                    title:"Waalian",
+                    artist:"-By Harnoor"
+
+            },
+            {
+                    name:"Friends",
+                    title:"I'll be there",
+                    artist:"-By Rembrandnts"
+
+            },
+            {
+                    name:"Faraar",
+                    title:"Faraar",
+                    artist:"-By Akul"
+            }];
 
             play.addEventListener("click",() =>{
             if(isPlaying)
@@ -56,6 +79,28 @@
             img.classList.remove("anime"); 
             };
 
+            const loadSong =(songs) =>{
+             title.textContent=songs.title;
+             artist.textContent=songs.artist;
+             music.src= songs.name+".mp3";
+             img.src=songs.name+".jpg";
+            };
+          songIndex=0;
+
+          const nextSong =()=>{
+              songIndex=(songIndex+1)%songs.length;
+               loadSong(songs[songIndex]);
+               playMusic();
+          }
+
+          const prevSong =()=>{
+              songIndex=(songIndex-1+songs.length)%songs.length;
+               loadSong(songs[songIndex]);
+               playMusic();
+          }
+
+            next.addEventListener("click",nextSong);
+            prev.addEventListener("click",prevSong);
         </script>
     </body>
 </html>
